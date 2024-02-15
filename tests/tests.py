@@ -11,7 +11,7 @@ class TestRegistry(TestRegistryBase):
     __test__ = True
 
     def get_registry(self) -> PluginRegistryBase:
-        
+
         # ensure that the singleton is reset
         ReportPluginRegistry._instance = None
         registry = ReportPluginRegistry()

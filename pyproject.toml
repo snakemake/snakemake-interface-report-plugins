@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "snakemake-interface-report-plugins"
-version = "0.1.0"
+version = "1.0.0"
 description = "The interface for Snakemake report plugins."
 authors = ["Johannes Koester <johannes.koester@uni-due.de>"]
 readme = "README.md"
