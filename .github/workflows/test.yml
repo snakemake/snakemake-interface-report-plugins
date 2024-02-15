@@ -14,15 +14,19 @@ jobs:
       - name: Check out the code
         uses: actions/checkout@v3
 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
       - name: Install poetry
-        run: pipx install poetry
+        run: pip install poetry
 
       - name: Determine dependencies
         run: poetry lock
 
       - uses: actions/setup-python@v4
         with:
-          python-version: "3.7"
+          python-version: "3.11"
           cache: poetry
 
       - name: Install Dependencies using Poetry
@@ -37,15 +41,19 @@ jobs:
       - name: Check out the code
         uses: actions/checkout@v3
 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
       - name: Install poetry
-        run: pipx install poetry
+        run: pip install poetry
 
       - name: Determine dependencies
         run: poetry lock
 
       - uses: actions/setup-python@v4
         with:
-          python-version: "3.7"
+          python-version: "3.11"
           cache: poetry
 
       - name: Install Dependencies using Poetry
@@ -59,20 +67,23 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
       - name: Install poetry
-        run: pipx install poetry
+        run: pip install poetry
 
       - name: Determine dependencies
         run: poetry lock
 
       - uses: actions/setup-python@v4
         with:
-          python-version: "3.7"
+          python-version: "3.11"
           cache: poetry
 
       - name: Install dependencies
         run: |
-          pip install connection-pool # because it is incompatible with poetry
           poetry install
 
       - name: Run pytest
