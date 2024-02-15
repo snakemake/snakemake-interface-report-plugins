@@ -9,13 +9,12 @@ readme = "README.md"
 python = "^3.11"
 snakemake-interface-common = "^1.16.0"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+snakemake = { git = "https://github.com/snakemake/snakemake.git", branch = "feat/report-plugins" }
 black = "^24.2.0"
 flake8 = "^7.0.0"
 coverage = "^7.4.1"
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.0.0"
 
 [build-system]
 requires = ["poetry-core"]
