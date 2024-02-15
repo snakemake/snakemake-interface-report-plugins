@@ -4,7 +4,7 @@ __email__ = "johannes.koester@uni-due.de"
 __license__ = "MIT"
 
 import types
-from typing import List, Mapping
+from typing import Mapping
 from snakemake_interface_report_plugins.registry.plugin import Plugin
 
 from snakemake_interface_report_plugins.settings import (

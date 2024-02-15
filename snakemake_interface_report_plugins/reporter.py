@@ -6,7 +6,12 @@ __license__ = "MIT"
 
 from abc import ABC, abstractmethod
 from typing import List, Mapping
-from snakemake_interface_report_plugin.interfaces import CategoryInterface, ConfigFileRecordInterface, JobRecordInterface, RuleRecordInterface
+from snakemake_interface_report_plugin.interfaces import (
+    CategoryInterface,
+    ConfigFileRecordInterface,
+    JobRecordInterface,
+    RuleRecordInterface,
+)
 from snakemake_interface_report_plugin.settings import ReportSettingsBase
 from snakemake_interface_report_plugins.interfaces import DAGReportInterface
 
@@ -15,7 +20,9 @@ class ReporterBase(ABC):
     def __init__(
         self,
         rules: Mapping[str, RuleRecordInterface],
-        results: Mapping[CategoryInterface, Mapping[CategoryInterface, List[RuleRecordInterface]]],
+        results: Mapping[
+            CategoryInterface, Mapping[CategoryInterface, List[RuleRecordInterface]]
+        ],
         configfiles: List[ConfigFileRecordInterface],
         jobs: List[JobRecordInterface],
         settings: ReportSettingsBase,
@@ -36,7 +43,4 @@ class ReporterBase(ABC):
         pass
 
     @abstractmethod
-    def render(self):
-        ...
-
-    
+    def render(self): ...

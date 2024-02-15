@@ -25,9 +25,7 @@ class Plugin(PluginBase):
 
     @property
     def cli_prefix(self):
-        return "report-" + self.name.replace(
-            common.storage_plugin_module_prefix, ""
-        )
+        return "report-" + self.name.replace(common.storage_plugin_module_prefix, "")
 
     @property
     def settings_cls(self):
