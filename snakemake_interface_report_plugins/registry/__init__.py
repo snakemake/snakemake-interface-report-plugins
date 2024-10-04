@@ -48,3 +48,15 @@ class ReportPluginRegistry(PluginRegistryBase):
                 kind=AttributeKind.CLASS,
             ),
         }
+
+    def collect_plugins(self):
+        """Collect plugins and call register_plugin for each."""
+        super().collect_plugins()
+
+        try:
+            from snakemake.report import html_reporter
+        except ImportError:
+            # snakemake not present, proceed without adding builtin plugins
+            return
+
+        self.register_plugin("html", html_reporter)
