@@ -25,13 +25,6 @@ class CategoryInterface(ABC):
     def id(self) -> str: ...
 
 
-class MetadataRecordInterface(ABC):
-
-    @property
-    @abstractmethod
-    def parse_yte(self) -> dict: ...
-
-
 class RuleRecordInterface(ABC):
     @property
     @abstractmethod

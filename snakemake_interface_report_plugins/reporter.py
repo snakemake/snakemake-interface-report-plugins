@@ -11,7 +11,6 @@ from snakemake_interface_report_plugins.interfaces import (
     ConfigFileRecordInterface,
     JobRecordInterface,
     RuleRecordInterface,
-    MetadataRecordInterface,
 )
 from snakemake_interface_report_plugins.settings import ReportSettingsBase
 from snakemake_interface_report_plugins.interfaces import DAGReportInterface
@@ -28,8 +27,8 @@ class ReporterBase(ABC):
         jobs: List[JobRecordInterface],
         settings: ReportSettingsBase,
         workflow_description: str,
-        metadata: MetadataRecordInterface,
         dag: DAGReportInterface,
+        metadata: dict = None,
     ):
         self.rules = rules
         self.jobs = jobs
@@ -37,8 +36,10 @@ class ReporterBase(ABC):
         self.configfiles = configfiles
         self.settings = settings
         self.workflow_description = workflow_description
-        self.metadata = metadata
         self.dag = dag
+        self.metadata = {}
+        if metadata:
+            self.metadata = metadata
 
         self.__post_init__()
 
