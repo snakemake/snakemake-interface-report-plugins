@@ -43,7 +43,10 @@ class ReporterBase(ABC):
         # ensure that metadata is a key value dictionary
         if not validate_flat_dict(metadata):
             raise TypeError(
-                "Metadata must be single level dict[str, str | int | float | list[str] | list[int] | list[float]]]"
+                (
+                    "Metadata must be single level "
+                    "dict[str, str | int | float | list[str] | list[int] | list[float]]]"
+                )
             )
 
         self.metadata = metadata
