@@ -45,7 +45,8 @@ class ReporterBase(ABC):
             raise TypeError(
                 (
                     "Metadata must be single level "
-                    "dict[str, str | int | float | list[str] | list[int] | list[float]]]"
+                    "dict[str, str | int | float | "
+                    "list[str] | list[int] | list[float]]]"
                 )
             )
 
