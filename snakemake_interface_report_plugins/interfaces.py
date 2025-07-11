@@ -146,4 +146,6 @@ class DAGReportInterface(ABC):
 
     @property
     @abstractmethod
-    def dependencies(self) -> Mapping[JobReportInterface, Mapping[JobReportInterface, Set[str]]]: ...
+    def dependencies(
+        self,
+    ) -> Mapping[JobReportInterface, Mapping[JobReportInterface, Set[str]]]: ...
