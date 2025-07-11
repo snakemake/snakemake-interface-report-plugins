@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import Iterable, List, Mapping, Optional
+from typing import Iterable, List, Mapping, Optional, Set
 
 from snakemake_interface_common.rules import RuleInterface
 
@@ -146,4 +146,6 @@ class DAGReportInterface(ABC):
 
     @property
     @abstractmethod
-    def dependencies(self) -> Mapping[JobReportInterface, JobReportInterface]: ...
+    def dependencies(
+        self,
+    ) -> Mapping[JobReportInterface, Mapping[JobReportInterface, Set[str]]]: ...
