@@ -30,7 +30,7 @@ class ReporterBase(ABC):
         dag: DAGReportInterface,
         metadata: Optional[
             Dict[str, Union[str, int, float, List[str], List[int], List[float]]]
-        ] = {},
+        ] = None,
     ):
         self.rules = rules
         self.jobs = jobs
@@ -39,17 +39,6 @@ class ReporterBase(ABC):
         self.settings = settings
         self.workflow_description = workflow_description
         self.dag = dag
-
-        # ensure that metadata is a key value dictionary
-        if not validate_flat_dict(metadata):
-            raise TypeError(
-                (
-                    "Metadata must be single level "
-                    "dict[str, str | int | float | "
-                    "list[str] | list[int] | list[float]]]"
-                )
-            )
-
         self.metadata = metadata
 
         self.__post_init__()
@@ -59,25 +48,3 @@ class ReporterBase(ABC):
 
     @abstractmethod
     def render(self): ...
-
-
-def is_valid_flat_value(value) -> bool:
-    if isinstance(value, (str, int, float)):
-        return True
-    elif isinstance(value, list):
-        return all(isinstance(item, (str, int, float)) for item in value)
-    else:
-        return False
-
-
-def validate_flat_dict(metadata: dict) -> bool:
-    if not isinstance(metadata, dict):
-        return False
-
-    for k, v in metadata.items():
-        if not isinstance(k, str):
-            return False
-        if not is_valid_flat_value(v):
-            return False
-
-    return True
