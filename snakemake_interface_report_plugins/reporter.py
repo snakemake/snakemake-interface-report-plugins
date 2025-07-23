@@ -5,7 +5,7 @@ __license__ = "MIT"
 
 
 from abc import ABC, abstractmethod
-from typing import List, Mapping
+from typing import List, Mapping, Dict, Optional, Union
 from snakemake_interface_report_plugins.interfaces import (
     CategoryInterface,
     ConfigFileRecordInterface,
@@ -28,6 +28,9 @@ class ReporterBase(ABC):
         settings: ReportSettingsBase,
         workflow_description: str,
         dag: DAGReportInterface,
+        metadata: Optional[
+            Dict[str, Union[str, int, float, List[str], List[int], List[float]]]
+        ] = None,
     ):
         self.rules = rules
         self.jobs = jobs
@@ -36,6 +39,7 @@ class ReporterBase(ABC):
         self.settings = settings
         self.workflow_description = workflow_description
         self.dag = dag
+        self.metadata = metadata
 
         self.__post_init__()
 
