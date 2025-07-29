@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/snakemake/snakemake-interface-report-plugins/compare/v1.1.1...v1.1.2) (2025-07-29)
+
+
+### Documentation
+
+* use snakedeploy ([4a32383](https://github.com/snakemake/snakemake-interface-report-plugins/commit/4a32383523b84471ded28c2f86da25d594d46d59))
+
 ## [1.1.1](https://github.com/snakemake/snakemake-interface-report-plugins/compare/v1.1.0...v1.1.1) (2025-07-11)
 
 
