@@ -9,6 +9,7 @@ from typing import List, Mapping
 from snakemake_interface_report_plugins.interfaces import (
     CategoryInterface,
     ConfigFileRecordInterface,
+    FileRecordInterface,
     JobRecordInterface,
     RuleRecordInterface,
 )
@@ -21,7 +22,7 @@ class ReporterBase(ABC):
         self,
         rules: Mapping[str, RuleRecordInterface],
         results: Mapping[
-            CategoryInterface, Mapping[CategoryInterface, List[RuleRecordInterface]]
+            CategoryInterface, Mapping[CategoryInterface, List[FileRecordInterface]]
         ],
         configfiles: List[ConfigFileRecordInterface],
         jobs: List[JobRecordInterface],
