@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/snakemake/snakemake-interface-report-plugins/compare/v1.2.0...v1.3.0) (2025-10-31)
+
+
+### Features
+
+* extend interface and fix type ([#11](https://github.com/snakemake/snakemake-interface-report-plugins/issues/11)) ([ad26253](https://github.com/snakemake/snakemake-interface-report-plugins/commit/ad26253220b142092b82c7d4e983ee5dc4ceebb9))
+
 ## [1.2.0](https://github.com/snakemake/snakemake-interface-report-plugins/compare/v1.1.2...v1.2.0) (2025-07-29)
 
 
