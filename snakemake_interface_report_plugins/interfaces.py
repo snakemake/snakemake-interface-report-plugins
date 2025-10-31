@@ -139,6 +139,10 @@ class FileRecordInterface(ABC):
     @abstractmethod
     def job(self) -> JobReportInterface: ...
 
+    @property
+    @abstractmethod
+    def aux_files(self) -> List[Path]: ...
+
 
 class DAGReportInterface(ABC):
     @abstractmethod
