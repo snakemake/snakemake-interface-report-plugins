@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import Iterable, List, Mapping, Optional, Set
 
 from snakemake_interface_common.rules import RuleInterface
+from snakemake_interface_common.software import SoftwareReport
 
 
 class JobReportInterface(ABC):
@@ -32,11 +33,7 @@ class RuleRecordInterface(ABC):
 
     @property
     @abstractmethod
-    def container_img_url(self) -> Optional[str]: ...
-
-    @property
-    @abstractmethod
-    def conda_env(self) -> Optional[str]: ...
+    def software(self) -> List[SoftwareReport]: ...
 
     @property
     @abstractmethod
