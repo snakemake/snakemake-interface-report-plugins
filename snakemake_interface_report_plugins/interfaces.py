@@ -88,11 +88,7 @@ class JobRecordInterface(ABC):
 
     @property
     @abstractmethod
-    def conda_env_file(self) -> Optional[Path]: ...
-
-    @property
-    @abstractmethod
-    def container_img_url(self) -> Optional[str]: ...
+    def software(self)  -> List[SoftwareReport]: ...
 
 
 class FileRecordInterface(ABC):

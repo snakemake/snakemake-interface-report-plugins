@@ -11,7 +11,7 @@ snakemake-interface-common = "^1.23.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
-snakemake = "^8.20.5"
+snakemake = { git = "https://github.com/snakemake/snakemake.git", rev = "feat/software-deployment-plugins" } # TODO return to stable version once branch is merged
 black = "^24.2.0"
 flake8 = "^7.0.0"
 coverage = "^7.4.1"
