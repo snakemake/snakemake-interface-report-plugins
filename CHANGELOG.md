@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/snakemake/snakemake-interface-report-plugins/compare/v1.3.0...v2.0.0) (2026-03-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* generalized software reporting
+
+### Features
+
+* generalized software reporting ([5d90874](https://github.com/snakemake/snakemake-interface-report-plugins/commit/5d908746b1072fefb97fbc8013fa395e2f4751b2))
+
 ## [1.3.0](https://github.com/snakemake/snakemake-interface-report-plugins/compare/v1.2.0...v1.3.0) (2025-10-31)
 
 
