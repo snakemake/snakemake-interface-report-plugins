@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/snakemake/snakemake-interface-report-plugins/compare/v2.0.0...v2.0.1) (2026-03-09)
+
+
+### Bug Fixes
+
+* temporarily use dev branch of snakemake ([cf4d150](https://github.com/snakemake/snakemake-interface-report-plugins/commit/cf4d150e6b75b90f0e1e91fea464669434017a08))
+
 ## [2.0.0](https://github.com/snakemake/snakemake-interface-report-plugins/compare/v1.3.0...v2.0.0) (2026-03-08)
 
 
