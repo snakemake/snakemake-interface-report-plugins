@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import Iterable, List, Mapping, Optional, Set
+from typing import Iterable, List, Mapping, Set
 
 from snakemake_interface_common.rules import RuleInterface
 from snakemake_interface_common.software import SoftwareReport
@@ -88,7 +88,7 @@ class JobRecordInterface(ABC):
 
     @property
     @abstractmethod
-    def software(self)  -> List[SoftwareReport]: ...
+    def software(self) -> List[SoftwareReport]: ...
 
 
 class FileRecordInterface(ABC):
