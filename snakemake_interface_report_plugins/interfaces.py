@@ -32,8 +32,8 @@ class RuleRecordInterface(ABC):
     def name(self) -> str: ...
 
     @property
-    @abstractmethod
-    def software(self) -> List[SoftwareReport]: ...
+    def software(self) -> List[SoftwareReport]:
+        return []
 
     @property
     @abstractmethod
@@ -87,8 +87,8 @@ class JobRecordInterface(ABC):
     def output(self) -> List[str]: ...
 
     @property
-    @abstractmethod
-    def software(self) -> List[SoftwareReport]: ...
+    def software(self) -> List[SoftwareReport]:
+        return []
 
 
 class FileRecordInterface(ABC):
