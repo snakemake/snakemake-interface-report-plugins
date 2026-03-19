@@ -13,6 +13,8 @@ from snakemake_interface_report_plugins.interfaces import (
     JobRecordInterface,
     RuleRecordInterface,
 )
+from snakemake_interface_report_plugins.logging import LoggingReportInterface
+from snakemake_interface_report_plugins.settings import ExecMode
 from snakemake_interface_report_plugins.settings import ReportSettingsBase
 from snakemake_interface_report_plugins.interfaces import DAGReportInterface
 
@@ -24,6 +26,7 @@ class ReporterBase(ABC):
         results: Mapping[
             CategoryInterface, Mapping[CategoryInterface, List[FileRecordInterface]]
         ],
+        logger: LoggingReportInterface,
         configfiles: List[ConfigFileRecordInterface],
         jobs: List[JobRecordInterface],
         settings: ReportSettingsBase,
@@ -33,6 +36,9 @@ class ReporterBase(ABC):
             Dict[str, Union[str, int, float, List[str], List[int], List[float]]]
         ] = None,
     ):
+        super().__init__()
+
+        self.logger = logger
         self.rules = rules
         self.jobs = jobs
         self.results = results
@@ -46,6 +52,9 @@ class ReporterBase(ABC):
 
     def __post_init__(self):
         pass
+
+    @abstractmethod
+    def get_exec_mode(self) -> ExecMode: ...
 
     @abstractmethod
     def render(self): ...
