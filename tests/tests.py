@@ -14,7 +14,6 @@ class TestRegistry(TestRegistryBase):
     __test__ = True
 
     def get_registry(self) -> PluginRegistryBase:
-
         # ensure that the singleton is reset
         ReportPluginRegistry._instance = None
         registry = ReportPluginRegistry()
@@ -24,9 +23,7 @@ class TestRegistry(TestRegistryBase):
         # locally installed plugins (e.g. snakemake-report-plugin-nanopub) do
         # not leak into tests that assert a specific cli_prefix.
         registry.plugins = {
-            name: plugin
-            for name, plugin in registry.plugins.items()
-            if name == "html"
+            name: plugin for name, plugin in registry.plugins.items() if name == "html"
         }
 
         return registry
