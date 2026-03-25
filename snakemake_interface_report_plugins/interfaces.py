@@ -9,140 +9,170 @@ from snakemake_interface_common.software import SoftwareReport
 class JobReportInterface(ABC):
     @property
     @abstractmethod
-    def rule(self) -> RuleInterface: ...
+    def rule(self) -> RuleInterface:
+        ...
 
 
 class CategoryInterface(ABC):
     @property
     @abstractmethod
-    def name(self) -> str: ...
+    def name(self) -> str:
+        ...
 
     @property
     @abstractmethod
-    def is_other(self) -> bool: ...
+    def is_other(self) -> bool:
+        ...
 
     @property
     @abstractmethod
-    def id(self) -> str: ...
+    def id(self) -> str:
+        ...
 
 
 class RuleRecordInterface(ABC):
     @property
     @abstractmethod
-    def name(self) -> str: ...
+    def name(self) -> str:
+        ...
+
+    @property
+    def software(self) -> List[SoftwareReport]:
+        return []
 
     @property
     @abstractmethod
-    def software(self) -> List[SoftwareReport]: ...
+    def n_jobs(self) -> int:
+        ...
 
     @property
     @abstractmethod
-    def n_jobs(self) -> int: ...
+    def id(self) -> str:
+        ...
 
     @property
     @abstractmethod
-    def id(self) -> str: ...
+    def source(self) -> str:
+        ...
 
     @property
     @abstractmethod
-    def source(self) -> str: ...
+    def output(self) -> List[str]:
+        ...
 
     @property
     @abstractmethod
-    def output(self) -> List[str]: ...
+    def input(self) -> List[str]:
+        ...
 
     @property
     @abstractmethod
-    def input(self) -> List[str]: ...
-
-    @property
-    @abstractmethod
-    def language(self) -> str: ...
+    def language(self) -> str:
+        ...
 
 
 class ConfigFileRecordInterface(ABC):
     @abstractmethod
-    def source(self) -> str: ...
+    def source(self) -> str:
+        ...
 
 
 class JobRecordInterface(ABC):
     @property
     @abstractmethod
-    def job(self) -> JobReportInterface: ...
+    def job(self) -> JobReportInterface:
+        ...
 
     @property
     @abstractmethod
-    def rule(self) -> RuleInterface: ...
+    def rule(self) -> RuleInterface:
+        ...
 
     @property
     @abstractmethod
-    def starttime(self) -> float: ...
+    def starttime(self) -> float:
+        ...
 
     @property
     @abstractmethod
-    def endtime(self) -> float: ...
+    def endtime(self) -> float:
+        ...
 
     @property
     @abstractmethod
-    def output(self) -> List[str]: ...
+    def output(self) -> List[str]:
+        ...
 
     @property
-    @abstractmethod
-    def software(self) -> List[SoftwareReport]: ...
+    def software(self) -> List[SoftwareReport]:
+        return []
 
 
 class FileRecordInterface(ABC):
     @property
     @abstractmethod
-    def path(self) -> Path: ...
+    def path(self) -> Path:
+        ...
 
     @property
     @abstractmethod
-    def labels(self) -> Mapping[str, str]: ...
+    def labels(self) -> Mapping[str, str]:
+        ...
 
     @property
     @abstractmethod
-    def caption(self) -> str: ...
+    def caption(self) -> str:
+        ...
 
     @property
     @abstractmethod
-    def size(self) -> int: ...
+    def size(self) -> int:
+        ...
 
     @property
     @abstractmethod
-    def mime(self) -> str: ...
+    def mime(self) -> str:
+        ...
 
     @property
     @abstractmethod
-    def id(self) -> str: ...
+    def id(self) -> str:
+        ...
 
     @property
     @abstractmethod
-    def wildcards(self) -> str: ...
+    def wildcards(self) -> str:
+        ...
 
     @property
     @abstractmethod
-    def params(self) -> str: ...
+    def params(self) -> str:
+        ...
 
     @property
     @abstractmethod
-    def name(self) -> str: ...
+    def name(self) -> str:
+        ...
 
     @property
     @abstractmethod
-    def job(self) -> JobReportInterface: ...
+    def job(self) -> JobReportInterface:
+        ...
 
     @property
     @abstractmethod
-    def aux_files(self) -> List[Path]: ...
+    def aux_files(self) -> List[Path]:
+        ...
 
 
 class DAGReportInterface(ABC):
     @abstractmethod
-    def toposorted(self) -> Iterable[List[JobReportInterface]]: ...
+    def toposorted(self) -> Iterable[List[JobReportInterface]]:
+        ...
 
     @property
     @abstractmethod
     def dependencies(
         self,
-    ) -> Mapping[JobReportInterface, Mapping[JobReportInterface, Set[str]]]: ...
+    ) -> Mapping[JobReportInterface, Mapping[JobReportInterface, Set[str]]]:
+        ...
